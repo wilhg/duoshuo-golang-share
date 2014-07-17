@@ -20,16 +20,16 @@ a := b := "c"       // error
 golang中，一般使用if来判断函数执行是否抛错，没有try-catch
 
 ```go
-func a() err
-if err := a(); err != nil {
+func a() err {
     if true {
         return nil
     } else {
         return error.New("I'm error.")
     }
 }
-if err := a(); err != nil {
 
+if err := a(); err != nil {
+    
 }
 
 /////////
