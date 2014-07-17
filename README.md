@@ -1,4 +1,4 @@
-golang talk
+golang share @Duoshuo
 --
 
 ####1. 类型声明后置
