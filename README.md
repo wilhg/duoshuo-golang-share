@@ -40,13 +40,16 @@ func b() (err, result) {
         return error.New("I'm error."), ""
     }
 }
+
 err, result := b()
 if err != nil {
     /* ... */
 }
+
 // ignore the error
 _, result := b()
 ```
+
 ####3. switch
 
 非穿透型的，fallthrough
@@ -82,6 +85,7 @@ func (e *Employee) SayHi() {
 > 通过变量首字母大小写区分public/private
 
 [link](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/02.5.md)
+
 ####5. interface
 `interface{}`是一个空类型，golang中所有类型都实现了`interface{}`
 
