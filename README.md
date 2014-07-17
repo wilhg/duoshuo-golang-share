@@ -120,7 +120,6 @@ type ReadWriter interface {
 关键字：go, chan, select, close
 > 不要通过共享来通信，而要通过通信来共享。
 
-#```go```
 **channel**:
 ```go
 ci := make(chan int)
