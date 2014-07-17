@@ -6,6 +6,7 @@ golang talk
 在复杂函数声明的时候，会比类型前置更清晰可读
 
 在变量声明的时候完全把type和value分开了
+
 **c**:  int main(int argc, char \*argv[]) { /\* ... \*/ }
 
 **go**: func main(argc int, argv *[]byte) int
@@ -17,6 +18,7 @@ a := b := "c"       // error
 ```
 
 golang中，一般使用if来判断函数执行是否抛错，没有try-catch
+
 ```go
 func a() err
 if err := a(); err != nil {
@@ -46,6 +48,7 @@ if err != nil {
 _, result := b()
 ```
 ####3. switch
+
 非穿透型的，fallthrough
 
 因为switch支持表达式，所以goblog中说，如果你的if需要判断三次以上，请使用switch
@@ -75,14 +78,16 @@ func (e *Employee) SayHi() {
         e.company, e.phone) //Yes you can split into 2 lines here.
 }
 ```
+
 > 通过变量首字母大小写区分public/private
 
-https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/02.5.md
+[link](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/02.5.md)
 ####5. interface
 `interface{}`是一个空类型，golang中所有类型都实现了`interface{}`
 
-传统定义：如果一只鸟是鸭子，那么它就是鸭子
-鸭子类型：如果它会拍翅膀，会叫，会游泳，那么它是鸭子
+传统定义：如果一只鸟是鸭子，那么它就是鸭子;
+
+鸭子类型：如果它会拍翅膀，会叫，会游泳，那么它是鸭子;
 
 ```go
 type Speaker interface {
@@ -98,6 +103,7 @@ func (t *Teacher) Speak() string {
 无需通过声明，只需直接实现接口方法。
 
 接口可以内嵌，著名的例子：`io`包下的`ReadWriter`接口
+
 ```go
 // Reader is the interface that wraps the basic Read method.
 type Reader interface {
@@ -117,7 +123,9 @@ type ReadWriter interface {
 ```
 
 ####6. 并发控制
+
 关键字：go, chan, select, close
+
 > 不要通过共享来通信，而要通过通信来共享。
 
 **channel**:
@@ -130,6 +138,7 @@ ch := make(chan type, value) //channel缓冲区
 ```
 
 channel通过操作符`<-`来接收和发送数据
+
 ```go
 ch <- v    // 发送v到channel ch.
 v := <-ch  // 从ch中接收数据，并赋值给v
